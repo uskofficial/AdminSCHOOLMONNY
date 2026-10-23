@@ -1,0 +1,28 @@
+# แผนนี้เป็นบริการแบบมีค่าใช้จ่าย ต้องตรวจแผนและราคาในบัญชีก่อนสร้าง
+services:
+  - type: web
+    name: usk-schoolmoney
+    runtime: node
+    plan: starter
+    buildCommand: npm ci --omit=dev
+    startCommand: npm run check:connections && npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: '24'
+      - key: TRUST_PROXY_HOPS
+        value: '1'
+      - key: FIREBASE_PROJECT_ID
+        value: schoolmonnyusk
+      - key: FIREBASE_SERVICE_ACCOUNT_JSON
+        sync: false
+      - key: SUPABASE_URL
+        value: https://ihagihlmaquzaniegcfp.supabase.co
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: SUPABASE_BUCKET
+        value: schoolmoney-private
+      - key: STUDENT_SESSION_SECRET
+        generateValue: true

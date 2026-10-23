@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>USK SCHOOLMONEY | ระบบการเงินหอพัก</title>
+<link rel="stylesheet" href="/tailwind.css"><link rel="stylesheet" href="/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js" defer></script>
+</head>
+<body>
+<!-- ส่วนแจ้งผลการทำงาน -->
+<div id="notice" role="status" aria-live="polite"></div>
+<section id="login" class="login-layout">
+ <div class="brand-panel"><div class="brand-mark">อศ.</div><p class="eyebrow">โรงเรียนอุทยานศึกษากระบี่</p><h1>USK<br>SCHOOLMONEY</h1><div class="brand-line"></div><h2>ระบบบริหารจัดการ<br>การเงินหอพักนักเรียน</h2><p>จัดการข้อมูล ตรวจสอบการชำระเงิน<br>และติดตามรายงานอย่างเป็นระบบ</p><small>ระบบสำหรับผู้ดูแลโรงเรียน</small></div>
+ <div class="login-panel"><div class="login-box"><img id="loginLogo" alt="ตราสัญลักษณ์โรงเรียน" hidden><p class="eyebrow">ยินดีต้อนรับ</p><h2>เข้าสู่ระบบผู้ดูแล</h2><p class="muted">กรุณาระบุบัญชีที่ได้รับสิทธิ์เข้าใช้งาน</p><p class="clock"></p><form id="loginForm"><label>ชื่อผู้ใช้งาน<input name="username" type="email" autocomplete="username" required placeholder="อีเมลบัญชีผู้ดูแล"></label><label>รหัสผ่าน<input name="password" type="password" autocomplete="current-password" required></label><button class="primary w-full" type="submit">เข้าสู่ระบบ</button></form><p id="loginError" role="alert"></p><small class="muted">เวอร์ชัน 1.0.0 • เวลาไทย</small></div></div>
+</section>
+<div id="shell" hidden>
+ <aside id="sidebar"><div class="sidebar-brand">USK SCHOOLMONEY<small>โรงเรียนอุทยานศึกษากระบี่</small></div><nav id="nav" aria-label="เมนูหลัก"></nav><div id="identity"></div><button id="logout">ออกจากระบบ</button></aside>
+ <div class="workspace"><header><button id="toggleNav" aria-label="เปิดหรือปิดเมนู">เมนู</button><span>ระบบบริหารการเงินหอพัก</span><span class="clock"></span></header><main><div class="page-heading"><div><p class="eyebrow">ระบบจัดการหลังบ้าน</p><h1 id="title"></h1></div><button id="refresh">รีเฟรชข้อมูล</button></div><div id="content"></div></main><footer>โรงเรียนอุทยานศึกษากระบี่ · USK SCHOOLMONEY · เวอร์ชัน 1.0.0</footer></div>
+</div>
+<!-- กล่องโต้ตอบเฉพาะรายการที่ได้รับอนุญาต -->
+<dialog id="modal" aria-labelledby="modalTitle"><div id="modalBody"></div></dialog>
+<script type="module" src="/app.js"></script>
+</body></html>
