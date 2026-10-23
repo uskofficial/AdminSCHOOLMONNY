@@ -1,7 +1,0 @@
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    // อนุญาตให้เข้าถึงข้อมูลผ่านเซิร์ฟเวอร์ที่ตรวจสอบสิทธิ์เท่านั้น
-    match /{document=**} { allow read, write: if false; }
-  }
-}
